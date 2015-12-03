@@ -1,0 +1,24 @@
+{
+	"name": "nerestaren/bbshortcuts",
+	"type": "phpbb-extension",
+	"description": "Dreceres de teclat per a bbcodes.",
+	"homepage": "http://tadaima.cat",
+	"version": "1.0.0",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Nerestaren",
+			"homepage": "http://tadaima.cat",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "BBShortcuts",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
+	}
+}

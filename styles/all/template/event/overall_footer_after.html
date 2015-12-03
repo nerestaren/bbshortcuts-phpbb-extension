@@ -1,0 +1,35 @@
+<!-- INCLUDEJS @nerestaren_bbshortcuts/js/shortcut.js -->
+<script>
+    $(document).ready(function() {
+    var ta = $("#message-box textarea")[0];
+    ta.addEventListener('focus', function() {
+        shortcut.add("Ctrl+B", function() {
+            var textEvent = document.createEvent('TextEvent');
+            textEvent.initTextEvent('textInput', true, true, null, '[b]' + ta.value.slice(ta.selectionStart, ta.selectionEnd) +'[/b]');
+            ta.dispatchEvent(textEvent);
+        });  
+        shortcut.add("Ctrl+I", function() {
+            var textEvent = document.createEvent('TextEvent');
+            textEvent.initTextEvent('textInput', true, true, null, '[i]' + ta.value.slice(ta.selectionStart, ta.selectionEnd) +'[/i]');
+            ta.dispatchEvent(textEvent);
+        });  
+        shortcut.add("Ctrl+U", function() {
+            var textEvent = document.createEvent('TextEvent');
+            textEvent.initTextEvent('textInput', true, true, null, '[u]' + ta.value.slice(ta.selectionStart, ta.selectionEnd) +'[/u]');
+            ta.dispatchEvent(textEvent);
+        });
+    }, false);
+    ta.addEventListener('blur', function() {
+        shortcut.remove("Ctrl+B",function() {
+            //
+        });
+        shortcut.remove("Ctrl+I",function() {
+            //
+        });
+        shortcut.remove("Ctrl+U",function() {
+            //
+        });
+    }, false);
+});
+
+</script>
